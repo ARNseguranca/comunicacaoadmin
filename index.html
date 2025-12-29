@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nascentes - Comunicação | Painel Administrativo</title>
+    <title>Nascentes - Painel Administrativo</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -40,17 +40,16 @@
         .wrapper {
             display: flex;
             width: 100%;
-            height: 100%;
+            min-height: 100vh;
         }
 
-        /* SIDEBAR */
         .sidebar {
             width: 280px;
             background: var(--white);
             box-shadow: var(--shadow);
             overflow-y: auto;
             position: fixed;
-            height: 100%;
+            height: 100vh;
             left: 0;
             top: 0;
             z-index: 1000;
@@ -101,16 +100,12 @@
             color: var(--primary);
         }
 
-        .nav-icon {
-            font-size: 1.2em;
-        }
-
-        /* MAIN CONTENT */
         .main-content {
             margin-left: 280px;
             flex: 1;
             overflow-y: auto;
             padding: 30px;
+            min-height: 100vh;
         }
 
         .header {
@@ -130,12 +125,6 @@
             font-weight: 700;
         }
 
-        .header-info {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
-
         .info-badge {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: var(--white);
@@ -145,7 +134,6 @@
             font-weight: 600;
         }
 
-        /* TABS */
         .tabs {
             display: flex;
             gap: 10px;
@@ -180,7 +168,6 @@
             border-color: var(--primary);
         }
 
-        /* CONTENT SECTIONS */
         .tab-content {
             display: none;
         }
@@ -195,7 +182,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* CARDS */
         .card {
             background: var(--white);
             border-radius: 12px;
@@ -213,7 +199,6 @@
             border-bottom: 2px solid var(--light);
         }
 
-        /* FORMS */
         .form-group {
             margin-bottom: 20px;
         }
@@ -256,12 +241,6 @@
             box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
         }
 
-        textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        /* BUTTONS */
         button {
             padding: 12px 24px;
             border: none;
@@ -305,16 +284,6 @@
             box-shadow: 0 6px 20px rgba(220, 53, 69, 0.3);
         }
 
-        .btn-warning {
-            background: linear-gradient(135deg, #ffc107 0%, #e0a800 100%);
-            color: var(--text);
-        }
-
-        .btn-warning:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 193, 7, 0.3);
-        }
-
         .btn-info {
             background: linear-gradient(135deg, #17a2b8 0%, #117a8b 100%);
             color: var(--white);
@@ -325,16 +294,6 @@
             box-shadow: 0 6px 20px rgba(23, 162, 184, 0.3);
         }
 
-        .btn-secondary {
-            background: var(--secondary);
-            color: var(--white);
-        }
-
-        .btn-secondary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(108, 117, 125, 0.3);
-        }
-
         .btn-group {
             display: flex;
             gap: 10px;
@@ -342,41 +301,6 @@
             flex-wrap: wrap;
         }
 
-        /* FIELDSET */
-        fieldset {
-            border: 2px solid var(--border);
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 20px;
-        }
-
-        fieldset legend {
-            font-weight: 600;
-            color: var(--primary);
-            padding: 0 10px;
-        }
-
-        .checkbox-group {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-            gap: 15px;
-            margin-top: 10px;
-        }
-
-        .checkbox-group label {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 0;
-            font-weight: 500;
-        }
-
-        .checkbox-group input[type="checkbox"] {
-            width: auto;
-            cursor: pointer;
-        }
-
-        /* STATUS MESSAGES */
         .status-message {
             padding: 15px 20px;
             border-radius: 8px;
@@ -403,13 +327,6 @@
             border: 2px solid #f5c6cb;
         }
 
-        .status-message.info {
-            background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%);
-            color: #0c5460;
-            border: 2px solid #bee5eb;
-        }
-
-        /* LISTS */
         .list-item {
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             border: 2px solid var(--border);
@@ -445,7 +362,6 @@
             flex-wrap: wrap;
         }
 
-        /* DASHBOARD GRID */
         .dashboard-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -485,15 +401,6 @@
             background-clip: text;
         }
 
-        /* TEXT EDITOR */
-        .text-editor {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
-            border: 2px solid var(--border);
-        }
-
         .editor-toolbar {
             display: flex;
             gap: 8px;
@@ -517,12 +424,6 @@
             border-color: var(--primary);
         }
 
-        .editor-toolbar button.active {
-            background: var(--primary);
-            color: var(--white);
-            border-color: var(--primary);
-        }
-
         .editor-content {
             min-height: 200px;
             padding: 15px;
@@ -539,13 +440,6 @@
             background: var(--white);
         }
 
-        .color-picker-group {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
         .color-input {
             width: 50px;
             height: 40px;
@@ -554,7 +448,6 @@
             cursor: pointer;
         }
 
-        /* PREVIEW */
         .preview-box {
             background: var(--light);
             border-radius: 12px;
@@ -576,7 +469,6 @@
             font-weight: 600;
         }
 
-        /* MODAL */
         .modal {
             display: none;
             position: fixed;
@@ -588,6 +480,7 @@
             background-color: rgba(0, 0, 0, 0.6);
             justify-content: center;
             align-items: center;
+            overflow-y: auto;
         }
 
         .modal.active {
@@ -602,6 +495,7 @@
             max-width: 600px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
             animation: slideUp 0.3s ease;
+            margin: auto;
         }
 
         @keyframes slideUp {
@@ -642,15 +536,39 @@
             color: var(--danger);
         }
 
-        /* MEDIA PREVIEW */
-        .media-preview {
-            max-width: 100%;
-            max-height: 400px;
+        .fieldset {
+            border: 2px solid var(--border);
             border-radius: 8px;
-            margin: 15px 0;
+            padding: 15px;
+            margin-bottom: 20px;
         }
 
-        /* RESPONSIVE */
+        .fieldset legend {
+            font-weight: 600;
+            color: var(--primary);
+            padding: 0 10px;
+        }
+
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 0;
+            font-weight: 500;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            cursor: pointer;
+        }
+
         @media (max-width: 768px) {
             .sidebar {
                 width: 100%;
@@ -669,18 +587,6 @@
                 gap: 15px;
             }
 
-            .header h1 {
-                font-size: 1.5em;
-            }
-
-            .tabs {
-                flex-direction: column;
-            }
-
-            .tab-btn {
-                width: 100%;
-            }
-
             .list-item {
                 flex-direction: column;
                 align-items: flex-start;
@@ -694,70 +600,33 @@
             .dashboard-grid {
                 grid-template-columns: 1fr;
             }
-
-            .modal-content {
-                width: 95%;
-            }
-
-            .checkbox-group {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
 </head>
 <body>
     <div class="wrapper">
-        <!-- SIDEBAR -->
         <div class="sidebar">
             <div class="sidebar-header">
                 <h1>🎬 Nascentes</h1>
                 <p>Painel Administrativo</p>
             </div>
             <div class="sidebar-nav">
-                <div class="nav-item active" data-tab="dashboard">
-                    <span class="nav-icon">📊</span>
-                    <span>Dashboard</span>
-                </div>
-                <div class="nav-item" data-tab="upload">
-                    <span class="nav-icon">📤</span>
-                    <span>Upload de Mídia</span>
-                </div>
-                <div class="nav-item" data-tab="text-editor">
-                    <span class="nav-icon">✏️</span>
-                    <span>Editor de Texto</span>
-                </div>
-                <div class="nav-item" data-tab="manage">
-                    <span class="nav-icon">📁</span>
-                    <span>Gerenciar Mídias</span>
-                </div>
-                <div class="nav-item" data-tab="schedule">
-                    <span class="nav-icon">📅</span>
-                    <span>Agendar Mídia</span>
-                </div>
-                <div class="nav-item" data-tab="schedules">
-                    <span class="nav-icon">📋</span>
-                    <span>Agendamentos</span>
-                </div>
-                <div class="nav-item" data-tab="tvs">
-                    <span class="nav-icon">📺</span>
-                    <span>TVs Online</span>
-                </div>
+                <div class="nav-item active" data-tab="dashboard">📊 Dashboard</div>
+                <div class="nav-item" data-tab="upload">📤 Upload de Mídia</div>
+                <div class="nav-item" data-tab="text-editor">✏️ Editor de Texto</div>
+                <div class="nav-item" data-tab="manage">📁 Gerenciar Mídias</div>
+                <div class="nav-item" data-tab="schedule">📅 Agendar Mídia</div>
+                <div class="nav-item" data-tab="schedules">📋 Agendamentos</div>
+                <div class="nav-item" data-tab="tvs">📺 TVs Online</div>
             </div>
         </div>
 
-        <!-- MAIN CONTENT -->
         <div class="main-content">
-            <!-- HEADER -->
             <div class="header">
-                <div>
-                    <h1>Painel de Controle</h1>
-                </div>
-                <div class="header-info">
-                    <div class="info-badge">🟢 Sistema Online</div>
-                </div>
+                <h1>Painel de Controle</h1>
+                <div class="info-badge">🟢 Sistema Online</div>
             </div>
 
-            <!-- DASHBOARD TAB -->
             <div id="dashboard" class="tab-content active">
                 <div class="dashboard-grid">
                     <div class="dashboard-card">
@@ -779,13 +648,12 @@
                 </div>
             </div>
 
-            <!-- UPLOAD TAB -->
             <div id="upload" class="tab-content">
                 <div class="card">
                     <h2>📤 Upload de Mídia</h2>
                     <form id="upload-form">
                         <div class="form-group">
-                            <label for="media-file">Selecione o arquivo (vídeo ou imagem):</label>
+                            <label for="media-file">Selecione o arquivo:</label>
                             <input type="file" id="media-file" accept="video/*,image/*" required>
                         </div>
                         <div class="form-group">
@@ -793,7 +661,7 @@
                             <input type="text" id="media-name" placeholder="Ex: Campanha de Natal" required>
                         </div>
                         <div class="form-group">
-                            <label for="media-duration">Duração (segundos, apenas para imagens):</label>
+                            <label for="media-duration">Duração (segundos):</label>
                             <input type="number" id="media-duration" value="10" min="1" max="300">
                         </div>
                         <button type="submit" class="btn-primary">✅ Fazer Upload</button>
@@ -802,7 +670,6 @@
                 </div>
             </div>
 
-            <!-- TEXT EDITOR TAB -->
             <div id="text-editor" class="tab-content">
                 <div class="card">
                     <h2>✏️ Editor de Texto Personalizado</h2>
@@ -811,23 +678,23 @@
                         <input type="text" id="text-name" placeholder="Ex: Promoção de Verão" required>
                     </div>
                     <div class="form-group">
-                        <label for="text-duration">Duração de Exibição (segundos):</label>
+                        <label for="text-duration">Duração (segundos):</label>
                         <input type="number" id="text-duration" value="10" min="1" max="300">
                     </div>
-                    <div class="text-editor">
+                    <div style="background: var(--white); border-radius: 12px; padding: 20px; margin-bottom: 20px; border: 2px solid var(--border);">
                         <div class="editor-toolbar">
-                            <button type="button" id="bold-btn" title="Negrito"><strong>B</strong></button>
-                            <button type="button" id="italic-btn" title="Itálico"><em>I</em></button>
-                            <button type="button" id="underline-btn" title="Sublinhado"><u>U</u></button>
-                            <button type="button" id="left-align-btn" title="Alinhar à esquerda">⬅️</button>
-                            <button type="button" id="center-align-btn" title="Centralizar">⬇️</button>
-                            <button type="button" id="right-align-btn" title="Alinhar à direita">➡️</button>
+                            <button type="button" id="bold-btn"><strong>B</strong></button>
+                            <button type="button" id="italic-btn"><em>I</em></button>
+                            <button type="button" id="underline-btn"><u>U</u></button>
+                            <button type="button" id="left-align-btn">⬅️</button>
+                            <button type="button" id="center-align-btn">⬇️</button>
+                            <button type="button" id="right-align-btn">➡️</button>
                             <label style="display: flex; align-items: center; gap: 8px; margin: 0;">
-                                Cor do Texto:
+                                Cor:
                                 <input type="color" id="text-color" value="#000000" class="color-input">
                             </label>
                             <label style="display: flex; align-items: center; gap: 8px; margin: 0;">
-                                Cor de Fundo:
+                                Fundo:
                                 <input type="color" id="bg-color" value="#ffffff" class="color-input">
                             </label>
                             <select id="font-size" style="width: auto; padding: 8px 12px; border: 2px solid var(--border); border-radius: 8px;">
@@ -843,7 +710,7 @@
                     </div>
                     <div class="preview-box">
                         <div id="preview-content" class="preview-content" style="background: #ffffff; color: #000000; font-size: 20px;">
-                            Pré-visualização do seu texto
+                            Pré-visualização
                         </div>
                     </div>
                     <div class="btn-group">
@@ -854,7 +721,6 @@
                 </div>
             </div>
 
-            <!-- MANAGE MEDIA TAB -->
             <div id="manage" class="tab-content">
                 <div class="card">
                     <h2>📁 Gerenciar Mídias</h2>
@@ -862,19 +728,18 @@
                 </div>
             </div>
 
-            <!-- SCHEDULE TAB -->
             <div id="schedule" class="tab-content">
                 <div class="card">
                     <h2>📅 Agendar Mídia</h2>
                     <form id="schedule-form">
                         <div class="form-group">
-                            <label for="select-media">Mídia a Agendar:</label>
+                            <label for="select-media">Mídia:</label>
                             <select id="select-media" required>
                                 <option value="">-- Selecione uma mídia --</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="schedule-tv-target">ID da TV (ou 'Todas'):</label>
+                            <label for="schedule-tv-target">ID da TV:</label>
                             <input type="text" id="schedule-tv-target" placeholder="Ex: TV001 ou Todas" required>
                         </div>
                         <div class="form-group">
@@ -893,25 +758,24 @@
                             <label for="schedule-end-time">Hora de Fim:</label>
                             <input type="time" id="schedule-end-time" required>
                         </div>
-                        <fieldset>
+                        <fieldset class="fieldset">
                             <legend>Dias da Semana:</legend>
                             <div class="checkbox-group">
-                                <label><input type="checkbox" name="day-of-week" value="0"> Domingo</label>
-                                <label><input type="checkbox" name="day-of-week" value="1"> Segunda</label>
-                                <label><input type="checkbox" name="day-of-week" value="2"> Terça</label>
-                                <label><input type="checkbox" name="day-of-week" value="3"> Quarta</label>
-                                <label><input type="checkbox" name="day-of-week" value="4"> Quinta</label>
-                                <label><input type="checkbox" name="day-of-week" value="5"> Sexta</label>
-                                <label><input type="checkbox" name="day-of-week" value="6"> Sábado</label>
+                                <label><input type="checkbox" name="day-of-week" value="0"> Dom</label>
+                                <label><input type="checkbox" name="day-of-week" value="1"> Seg</label>
+                                <label><input type="checkbox" name="day-of-week" value="2"> Ter</label>
+                                <label><input type="checkbox" name="day-of-week" value="3"> Qua</label>
+                                <label><input type="checkbox" name="day-of-week" value="4"> Qui</label>
+                                <label><input type="checkbox" name="day-of-week" value="5"> Sex</label>
+                                <label><input type="checkbox" name="day-of-week" value="6"> Sáb</label>
                             </div>
                         </fieldset>
-                        <button type="submit" class="btn-primary">📅 Agendar Mídia</button>
+                        <button type="submit" class="btn-primary">📅 Agendar</button>
                         <p id="schedule-status" class="status-message"></p>
                     </form>
                 </div>
             </div>
 
-            <!-- SCHEDULES TAB -->
             <div id="schedules" class="tab-content">
                 <div class="card">
                     <h2>📋 Agendamentos Ativos</h2>
@@ -919,7 +783,6 @@
                 </div>
             </div>
 
-            <!-- TVS TAB -->
             <div id="tvs" class="tab-content">
                 <div class="card">
                     <h2>📺 TVs Online</h2>
@@ -929,7 +792,6 @@
         </div>
     </div>
 
-    <!-- MODALS -->
     <div id="editModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -943,12 +805,12 @@
                     <input type="text" id="edit-name" required>
                 </div>
                 <div class="form-group">
-                    <label for="edit-duration">Duração (segundos):</label>
+                    <label for="edit-duration">Duração:</label>
                     <input type="number" id="edit-duration" min="1" max="300">
                 </div>
                 <div class="btn-group">
                     <button type="submit" class="btn-primary">Salvar</button>
-                    <button type="button" class="btn-secondary close-btn">Cancelar</button>
+                    <button type="button" class="btn-danger close-btn">Cancelar</button>
                 </div>
             </form>
         </div>
@@ -964,7 +826,6 @@
         </div>
     </div>
 
-    <!-- FIREBASE SDK -->
     <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-storage-compat.js"></script>
@@ -984,7 +845,6 @@
         const db = firebase.firestore();
         const storage = firebase.storage();
 
-        // ===== DOM ELEMENTS =====
         const navItems = document.querySelectorAll('.nav-item');
         const tabContents = document.querySelectorAll('.tab-content');
         const uploadForm = document.getElementById('upload-form');
@@ -1005,7 +865,6 @@
         const editName = document.getElementById('edit-name');
         const editDuration = document.getElementById('edit-duration');
 
-        // TEXT EDITOR
         const textName = document.getElementById('text-name');
         const textDuration = document.getElementById('text-duration');
         const editorContent = document.getElementById('editor-content');
@@ -1023,7 +882,6 @@
         const exportTextBtn = document.getElementById('export-text-btn');
         const textEditorStatus = document.getElementById('text-editor-status');
 
-        // DASHBOARD
         const totalMediaEl = document.getElementById('total-media');
         const totalSchedulesEl = document.getElementById('total-schedules');
         const totalTvsEl = document.getElementById('total-tvs');
@@ -1032,7 +890,6 @@
         let allMedia = [];
         let allSchedules = [];
 
-        // ===== HELPER FUNCTIONS =====
         function showStatus(element, message, type) {
             element.textContent = message;
             element.className = `status-message ${type}`;
@@ -1057,7 +914,6 @@
             modal.classList.remove('active');
         }
 
-        // ===== TAB NAVIGATION =====
         navItems.forEach(item => {
             item.addEventListener('click', () => {
                 const tabId = item.dataset.tab;
@@ -1073,7 +929,6 @@
             });
         });
 
-        // ===== UPLOAD LOGIC =====
         uploadForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const file = mediaFile.files[0];
@@ -1102,7 +957,7 @@
                     name: name,
                     url: downloadURL,
                     type: mediaType,
-                    duration: mediaType === 'image' ? duration : null,
+                    duration: duration,
                     isText: false,
                     createdAt: new Date().toISOString()
                 });
@@ -1117,7 +972,6 @@
             }
         });
 
-        // ===== TEXT EDITOR SAVE =====
         saveTextBtn.addEventListener('click', async () => {
             const name = textName.value.trim();
             const duration = parseInt(textDuration.value);
@@ -1131,15 +985,9 @@
                 return;
             }
 
-            if (isNaN(duration) || duration < 1) {
-                showStatus(textEditorStatus, '❌ Insira uma duração válida', 'error');
-                return;
-            }
-
-            showStatus(textEditorStatus, '⏳ Salvando texto como mídia...', 'info');
+            showStatus(textEditorStatus, '⏳ Salvando texto...', 'info');
 
             try {
-                // Criar imagem do texto
                 const canvas = document.createElement('canvas');
                 const ctx = canvas.getContext('2d');
                 canvas.width = 1920;
@@ -1162,28 +1010,22 @@
                     ctx.fillText(line, canvas.width / 2, startY + index * lineHeight);
                 });
 
-                // Converter canvas para blob
                 canvas.toBlob(async (blob) => {
                     try {
                         const storageRef = storage.ref(`media/text_${Date.now()}.png`);
                         const snapshot = await storageRef.put(blob);
                         const downloadURL = await snapshot.ref.getDownloadURL();
 
-                        // Salvar no Firestore
                         await db.collection('media').add({
                             name: name,
                             url: downloadURL,
                             type: 'image',
                             duration: duration,
                             isText: true,
-                            textContent: content,
-                            textColor: textColor,
-                            bgColor: bgColor,
-                            fontSize: fontSize,
                             createdAt: new Date().toISOString()
                         });
 
-                        showStatus(textEditorStatus, '✅ Texto salvo como mídia com sucesso!', 'success');
+                        showStatus(textEditorStatus, '✅ Texto salvo com sucesso!', 'success');
                         textName.value = '';
                         textDuration.value = '10';
                         editorContent.innerHTML = 'Digite seu texto aqui...';
@@ -1195,7 +1037,7 @@
                         renderMediaList();
                         updateDashboard();
                     } catch (error) {
-                        showStatus(textEditorStatus, `❌ Erro ao salvar: ${error.message}`, 'error');
+                        showStatus(textEditorStatus, `❌ Erro: ${error.message}`, 'error');
                     }
                 });
             } catch (error) {
@@ -1203,19 +1045,17 @@
             }
         });
 
-        // ===== FETCH MEDIA =====
         async function fetchAllMedia() {
             try {
                 const snapshot = await db.collection('media').get();
                 allMedia = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
                 return allMedia;
             } catch (error) {
-                console.error('Erro ao buscar mídias:', error);
+                console.error('Erro:', error);
                 return [];
             }
         }
 
-        // ===== RENDER MEDIA LIST =====
         async function renderMediaList() {
             const media = await fetchAllMedia();
             mediaList.innerHTML = '';
@@ -1237,7 +1077,6 @@
                     </div>
                     <div class="list-item-actions">
                         <button class="btn-info" onclick="previewMedia('${item.id}')">👁️ Ver</button>
-                        <button class="btn-warning" onclick="editMedia('${item.id}')">✏️ Editar</button>
                         <button class="btn-danger" onclick="deleteMedia('${item.id}')">🗑️ Excluir</button>
                     </div>
                 `;
@@ -1245,41 +1084,8 @@
             });
         }
 
-        // ===== EDIT MEDIA =====
-        async function editMedia(id) {
-            const media = allMedia.find(m => m.id === id);
-            if (!media) return;
-
-            editId.value = id;
-            editName.value = media.name;
-            editDuration.value = media.duration || 10;
-            openModal(editModal);
-        }
-
-        editForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const id = editId.value;
-            const name = editName.value.trim();
-            const duration = parseInt(editDuration.value);
-
-            try {
-                await db.collection('media').doc(id).update({
-                    name: name,
-                    duration: duration
-                });
-
-                closeModal(editModal);
-                renderMediaList();
-                populateMediaSelect();
-                updateDashboard();
-            } catch (error) {
-                alert(`Erro: ${error.message}`);
-            }
-        });
-
-        // ===== DELETE MEDIA =====
         async function deleteMedia(id) {
-            if (!confirm('Tem certeza que deseja excluir esta mídia?')) return;
+            if (!confirm('Tem certeza?')) return;
 
             try {
                 const media = allMedia.find(m => m.id === id);
@@ -1297,7 +1103,6 @@
             }
         }
 
-        // ===== PREVIEW MEDIA =====
         async function previewMedia(id) {
             const media = allMedia.find(m => m.id === id);
             if (!media) return;
@@ -1314,7 +1119,6 @@
             openModal(previewModal);
         }
 
-        // ===== POPULATE MEDIA SELECT =====
         async function populateMediaSelect() {
             const media = await fetchAllMedia();
             selectMedia.innerHTML = '<option value="">-- Selecione uma mídia --</option>';
@@ -1327,7 +1131,6 @@
             });
         }
 
-        // ===== SCHEDULE LOGIC =====
         scheduleForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const mediaId = selectMedia.value;
@@ -1362,7 +1165,7 @@
                     createdAt: new Date().toISOString()
                 });
 
-                showStatus(scheduleStatus, '✅ Mídia agendada com sucesso!', 'success');
+                showStatus(scheduleStatus, '✅ Agendado com sucesso!', 'success');
                 scheduleForm.reset();
                 renderSchedulesList();
                 updateDashboard();
@@ -1371,25 +1174,23 @@
             }
         });
 
-        // ===== FETCH SCHEDULES =====
         async function fetchAllSchedules() {
             try {
                 const snapshot = await db.collection('schedules').get();
                 allSchedules = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
                 return allSchedules;
             } catch (error) {
-                console.error('Erro ao buscar agendamentos:', error);
+                console.error('Erro:', error);
                 return [];
             }
         }
 
-        // ===== RENDER SCHEDULES =====
         async function renderSchedulesList() {
             const schedules = await fetchAllSchedules();
             schedulesList.innerHTML = '';
 
             if (schedules.length === 0) {
-                schedulesList.innerHTML = '<p style="text-align: center; color: #6c757d;">Nenhum agendamento ativo</p>';
+                schedulesList.innerHTML = '<p style="text-align: center; color: #6c757d;">Nenhum agendamento</p>';
                 return;
             }
 
@@ -1400,8 +1201,8 @@
                     <div class="list-item-content">
                         <h3>${item.mediaName}</h3>
                         <p>TV: ${item.tvId}</p>
-                        <p>Período: ${item.startDate} a ${item.endDate}</p>
-                        <p>Horário: ${item.startTime} - ${item.endTime}</p>
+                        <p>${item.startDate} a ${item.endDate}</p>
+                        <p>${item.startTime} - ${item.endTime}</p>
                     </div>
                     <div class="list-item-actions">
                         <button class="btn-danger" onclick="deleteSchedule('${item.id}')">🗑️ Excluir</button>
@@ -1411,9 +1212,8 @@
             });
         }
 
-        // ===== DELETE SCHEDULE =====
         async function deleteSchedule(id) {
-            if (!confirm('Tem certeza que deseja excluir este agendamento?')) return;
+            if (!confirm('Tem certeza?')) return;
 
             try {
                 await db.collection('schedules').doc(id).delete();
@@ -1424,7 +1224,6 @@
             }
         }
 
-        // ===== RENDER TVS =====
         async function renderTvsList() {
             try {
                 const snapshot = await db.collection('tvs').get();
@@ -1451,11 +1250,10 @@
                     tvsList.appendChild(div);
                 });
             } catch (error) {
-                console.error('Erro ao buscar TVs:', error);
+                console.error('Erro:', error);
             }
         }
 
-        // ===== UPDATE DASHBOARD =====
         async function updateDashboard() {
             const media = await fetchAllMedia();
             const schedules = await fetchAllSchedules();
@@ -1468,7 +1266,6 @@
             playingEl.textContent = tvs.filter(tv => tv.isOnline && tv.currentMedia).length;
         }
 
-        // ===== TEXT EDITOR =====
         boldBtn.addEventListener('click', () => document.execCommand('bold'));
         italicBtn.addEventListener('click', () => document.execCommand('italic'));
         underlineBtn.addEventListener('click', () => document.execCommand('underline'));
@@ -1528,23 +1325,22 @@
             link.download = `texto_${Date.now()}.png`;
             link.click();
 
-            showStatus(textEditorStatus, '✅ Imagem exportada com sucesso!', 'success');
+            showStatus(textEditorStatus, '✅ Imagem exportada!', 'success');
         });
 
-        // ===== MODAL CLOSE =====
         document.querySelectorAll('.close-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
-                e.target.closest('.modal').classList.remove('active');
+                const modal = e.target.closest('.modal');
+                if (modal) closeModal(modal);
             });
         });
 
         window.addEventListener('click', (e) => {
             if (e.target.classList.contains('modal')) {
-                e.target.classList.remove('active');
+                closeModal(e.target);
             }
         });
 
-        // ===== INITIALIZATION =====
         document.addEventListener('DOMContentLoaded', () => {
             const today = new Date().toISOString().split('T')[0];
             document.getElementById('schedule-start-date').min = today;
